@@ -9,5 +9,6 @@ def article_view(request):
     return render(request, 'mainapp/article.html', {'article': article})
 
 
+
 class ProjectListView(ListView):
     model = Project
