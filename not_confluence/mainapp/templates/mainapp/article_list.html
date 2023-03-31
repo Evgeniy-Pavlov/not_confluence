@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block body %}
+Article
+<div>
+
+{% for art in object_list %}
+    <div class="card border-light mb-3" style="max-width: auto;">
+        <div class="card-header">@{{art.author.login}}</div>
+    <div class="card-body">
+    <h5 class="card-title">{{art.title}}</h5>
+    <p class="card-text">{{art.body}}</p>
+  </div>
+</div>
+{% endfor %}
+</ul>
+</div>
+{% endblock %}
+    

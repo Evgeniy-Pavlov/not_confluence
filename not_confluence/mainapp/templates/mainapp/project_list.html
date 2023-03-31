@@ -1,5 +1,18 @@
 {% extends "base.html" %}
 {% block body %}
-<p>Hello</p>
-    
+
+<ol>
+    {% for project in object_list %}
+        <li>
+        <div class="card" style="width: auto;">
+  <div class="card-body">
+    <h5 class="card-title">{{project.name}}</h5>
+    <p class="card-text">Создал(а): @{{project.user_create.login}}, дата создания: {{project.date_create}}</p>
+    <p class="card-text">Обновил(а): @{{project.user_update.login}}, дата создания: {{project.date_update}}</p>
+    <a href="#" class="btn btn-primary">Открыть связанные статьи</a>
+  </div></div>
+        </li>
+    {% endfor %}
+    </ul>
+        
 {% endblock %}
