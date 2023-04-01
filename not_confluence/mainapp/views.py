@@ -14,3 +14,20 @@ class ProjectListView(ListView):
 
 class ArticleDetailView(DetailView):
     model = Article
+
+
+class ArticleCreateView(CreateView):
+    model = Article
+    fields = '__all__'
+    success_url = '/article/'
+
+
+class ArticleUpdateView(UpdateView):
+    model = Article
+    fields = '__all__'
+    success_url = '/article/'
+
+
+class ArticleDeleteView(DeleteView):
+    model = Article
+    success_url = '/article/'
