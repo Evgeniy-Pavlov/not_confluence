@@ -39,3 +39,17 @@ class ProjectCreateView(CreateView):
     form_class = ProjectForm
     success_url = '/project-list/'
 
+
+class ProjectDetailView(DetailView):
+    model = Project
+
+
+class ProjectUpdateView(UpdateView):
+    model = Project
+    form_class = ProjectForm
+    success_url = '/project-list/'
+
+
+class ProjectDeleteView(DeleteView):
+    model = Project
+    success_url = '/project-list/'

@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 
 {% block body %}
-<a href="/article/">Вернуться к списку</a>
-    <h1 class="display-6">{{object.title}}</h1>
+<a href="/project-list/">Вернуться к списку</a>
+    <h1 class="display-6">{{object.name}}</h1>
     <p class="lead">
         {{object.project.name}}
       </p>
+      <a href="/project-update/{{object.id}}/">Редактировать</a>
     <p class="lead">
-        Автор: @{{object.author.login}} Создано: {{object.date_create}}
+        Создал: @{{object.user_create.login}} Создано: {{object.date_create}}
       </p>
       {% if object.user_update %}
         <p class="lead">
