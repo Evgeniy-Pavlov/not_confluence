@@ -4,10 +4,6 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 
 # Create your views here.
 
-def article_view(request):
-    article = Article.objects.all()
-    return render(request, 'mainapp/article_list.html', {'article': article})
-
 class ArticleListView(ListView):
     model = Article
 
@@ -15,3 +11,6 @@ class ArticleListView(ListView):
 class ProjectListView(ListView):
     model = Project
 
+
+class ArticleDetailView(DetailView):
+    model = Article

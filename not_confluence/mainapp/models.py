@@ -19,8 +19,8 @@ class Project(models.Model):
 
 
 class Article(models.Model):
-    title = models.CharField(unique=True, max_length=30)
-    body = models.TextField(blank=True, null=True, max_length=3000)
+    title = models.CharField(unique=True, max_length=100)
+    body = models.TextField(blank=True, null=True, max_length=10000)
     date_create = models.DateTimeField(null=True)
     project = models.ForeignKey(Project, on_delete=models.PROTECT, null=False)
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
