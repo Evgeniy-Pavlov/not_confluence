@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block body %}
+<a href="/article/">Вернуться к списку</a>
+    <h1 class="display-6">{{object.title}}</h1>
+    <p class="lead">
+        {{object.project.name}}
+      </p>
+    <p class="lead">
+        Автор: @{{object.author.login}} Создано: {{object.date_create}}
+      </p>
+      {% if object.user_update %}
+        <p class="lead">
+            Обновил: @{{object.user_update.login}} Создано: {{object.date_update}}
+        </p>
+      {% endif %}
+    <div class="bd-example-snippet bd-code-snippet"><p>{{object.body}}</p></div>
+{% endblock  %}

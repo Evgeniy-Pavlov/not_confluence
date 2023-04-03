@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{{% block body %}
+ 
+<form method="POST">
+    {% csrf_token %}
+    <h3 class="display-6">Подтвердите удаление статьи "{{object.title}}"</h3>
+    <button class="btn btn-danger">Да</button>
+    <a href="/article/" class="btn btn-primary">Нет</a>
+</form>
+
+{% endblock %}}

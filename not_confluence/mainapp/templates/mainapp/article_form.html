@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="card border-light mb-3" style="max-width: auto;">
+    <form  method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </form>
+    </div>
+{% endblock %}

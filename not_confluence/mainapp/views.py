@@ -1,8 +1,55 @@
 from django.shortcuts import render
 from .models import User, Article, Project
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from .forms import ArticleForm, ProjectForm
 
 # Create your views here.
 
-def article_view(request):
-    article = Article.objects.all()
-    return render(request, 'mainapp/article.html', {'article': article})
+class ArticleListView(ListView):
+    model = Article
+
+
+class ProjectListView(ListView):
+    model = Project
+
+
+class ArticleDetailView(DetailView):
+    model = Article
+
+
+class ArticleCreateView(CreateView):
+    model = Article
+    form_class = ArticleForm
+    success_url = '/article/'
+
+
+class ArticleUpdateView(UpdateView):
+    model = Article
+    form_class = ArticleForm
+    success_url = '/article/'
+
+
+class ArticleDeleteView(DeleteView):
+    model = Article
+    success_url = '/article/'
+
+
+class ProjectCreateView(CreateView):
+    model = Project
+    form_class = ProjectForm
+    success_url = '/project-list/'
+
+
+class ProjectDetailView(DetailView):
+    model = Project
+
+
+class ProjectUpdateView(UpdateView):
+    model = Project
+    form_class = ProjectForm
+    success_url = '/project-list/'
+
+
+class ProjectDeleteView(DeleteView):
+    model = Project
+    success_url = '/project-list/'
