@@ -6,11 +6,13 @@
         <li>
         <div class="card" style="width: auto;">
   <div class="card-body">
-    <h5 class="card-title"><a href="/project-detail/{{project.id}}/">{{project.name}}</a></h5>
-    <a href="/project-delete/{{project.id}}/">Удалить</a>
-    <p class="card-text">Создал(а): @{{project.user_create.login}}, дата создания: {{project.date_create}}</p>
-    <p class="card-text">Обновил(а): @{{project.user_update.login}}, дата создания: {{project.date_update}}</p>
-    <a href="#" class="btn btn-primary">Открыть связанные статьи</a>
+    <h5 class="card-title"><a id="form-detail" href="/project-detail/{{project.id}}/">{{project.name}}</a></h5>
+    <a id="delete-form" href="/project-delete/{{project.id}}/">Удалить</a>
+    <p id="user-create" class="card-text">Создал(а): @{{project.user_create.login}}, дата создания: {{project.date_create}}</p>
+    {% if object.user_update %}
+    <p id="user-update" class="card-text">Обновил(а): @{{project.user_update.login}}, дата создания: {{project.date_update}}</p>
+    {% endif %}
+    <a id="article-views-project" href="#" class="btn btn-primary">Открыть связанные статьи</a>
   </div></div>
         </li>
     {% endfor %}
