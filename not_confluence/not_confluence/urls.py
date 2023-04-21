@@ -15,9 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mainapp.views import ProjectListView, ArticleListView, ArticleDetailView,\
-    ArticleCreateView, ArticleUpdateView, ArticleDeleteView, ProjectCreateView,\
-    ProjectDetailView, ProjectUpdateView, ProjectDeleteView
+from mainapp.views import ProjectListView, ArticleListView, ArticleDetailView, ArticleCreateView, \
+    ArticleUpdateView, ArticleDeleteView, ProjectCreateView, ProjectDetailView, ProjectUpdateView, ProjectDeleteView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
