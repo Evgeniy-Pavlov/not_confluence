@@ -1,7 +1,6 @@
+import datetime
 from django.test import TestCase
 from .models import User, Project, Article
-from .views import ArticleListView, ProjectListView
-import datetime
 from http import HTTPStatus
 from bs4 import BeautifulSoup
 
@@ -110,6 +109,3 @@ class TestProjectView(TestCase):
         self.assertEqual(delete_link.get('href'), '/project-delete/1/')
         user_create_info = data[0].find('p', class_='card-text', id='user-create')
         self.assertTrue(self.user_1.login in user_create_info.text)
-
-        
-        
