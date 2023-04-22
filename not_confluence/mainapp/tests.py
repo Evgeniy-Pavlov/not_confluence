@@ -1,3 +1,6 @@
+from django.test import TestCase
+from .models import User, Project, Article
+from .views import ArticleListView, ProjectListView
 import datetime
 from http import HTTPStatus
 from bs4 import BeautifulSoup

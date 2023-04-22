@@ -1,4 +1,5 @@
-"""Тут хранятся классы таблиц."""
+
+"""Модуль описывающий работу таблиц приложения. Основные: User, Project, Article."""
 from datetime import datetime
 from django.db import models
 
